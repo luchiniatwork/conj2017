@@ -1,0 +1,28 @@
+type Product {
+  id: ID
+  name: String
+  category: Category
+  flatCategories: Category[0..n]
+  image: String
+}
+
+type Category {
+  id: ID
+  name: String
+  parent: Category?
+  children: Category[0..n]
+  flatChildren: Category[0..n]
+  products: Product[0..n]
+}
+
+@lang/lacinia identifier query
+type QueryRoot {
+  products: Product[0..n] {
+    @doc "Returns products"
+    @lang/lacinia resolver resolver-products
+  }
+  categories: Category[0..n] {
+    @doc "Returns categories"
+    @lang/lacinia resolver resolver-categories
+  }
+}

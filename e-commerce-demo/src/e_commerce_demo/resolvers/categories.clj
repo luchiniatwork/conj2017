@@ -1,9 +1,10 @@
-(ns e-commerce-demo.resolvers.categories)
+(ns e-commerce-demo.resolvers.categories
+  (:require [camel-snake-kebab.core :refer [->camelCaseKeyword]]
+            [camel-snake-kebab.extras :refer [transform-keys]]
+            [e-commerce-demo.query :as query]))
 
-(defn resolver
-  [context arguments value]
-  [{:id "id"
-    :name "bla"
-    :category {:id "cat"
-               :name "cate"}
-    :image "img"}])
+(defn resolver [db]
+  (fn [context arguments value]
+    (let [q `[{:categories/categories ~(query/selectors context)}]
+          {:keys [categories/categories]} (query/query db q)]
+      (transform-keys ->camelCaseKeyword categories))))

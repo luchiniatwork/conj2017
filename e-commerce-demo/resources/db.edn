@@ -4,47 +4,98 @@
   [:product/by-id "TIL"]
   [:product/by-id "CAS"]
   [:product/by-id "FIO"]]
+
+ :categories/categories
+ [[:category/by-id "WOM"]
+  [:category/by-id "FOO"]
+  [:category/by-id "HEE"]
+  [:category/by-id "PUM"]
+  [:category/by-id "BLO"]
+  [:category/by-id "PLA"]]
  
  :product/by-id
  {"BAR" {:product/id "BAR"
          :product/name "Barineau"
-         :product/category [[:categoryy/by-id "BLO"]]}
+         :product/category [:category/by-id "BLO"]
+         :product/bread-crumbs [[:category/by-id "WOM"]
+                                [:category/by-id "FOO"]
+                                [:category/by-id "BLO"]]}
   "STE" {:product/id "STE"
          :product/name "Stessy"
-         :product/category [[:category/by-id "PUM"]]}
+         :product/category [:category/by-id "PUM"]
+         :product/bread-crumbs [[:category/by-id "WOM"]
+                                [:category/by-id "FOO"]
+                                [:category/by-id "PUM"]]}
   "TIL" {:product/id "TIL"
          :product/name "Tilley"
-         :product/category [[:category/by-id "BLO"]]}
+         :product/category [:category/by-id "BLO"]
+         :product/bread-crumbs [[:category/by-id "WOM"]
+                                [:category/by-id "FOO"]
+                                [:category/by-id "BLO"]]}
   "CAS" {:product/id "CAS"
          :product/name "Cassedy"
-         :product/category [[:category/by-id "PLA"]]}
+         :product/category [:category/by-id "PLA"]
+         :product/bread-crumbs [[:category/by-id "WOM"]
+                                [:category/by-id "FOO"]
+                                [:category/by-id "PLA"]]}
   "FIO" {:product/id "FIO"
          :product/name "Fiolla"
-         :product/category [[:category/by-id "PLA"]]}}
+         :product/category [:category/by-id "PLA"]
+         :product/bread-crumbs [[:category/by-id "WOM"]
+                                [:category/by-id "FOO"]
+                                [:category/by-id "PLA"]]}}
 
  :category/by-id
  {"WOM" {:category/id "WOM"
          :category/name "Women"
          :category/parent nil
-         :category/children [[:category/by-id "FOO"]]}
+         :category/bread-crumbs []
+         :category/children [[:category/by-id "FOO"]]
+         :category/products [[:product/by-id "BAR"]
+                             [:product/by-id "STE"]
+                             [:product/by-id "TIL"]
+                             [:product/by-id "CAS"]
+                             [:product/by-id "FIO"]]}
   "FOO" {:category/id "FOO"
          :category/name "Footwear"
-         :category/parent [[:category/by-id "WOM"]]
+         :category/parent [:category/by-id "WOM"]
+         :category/bread-crumbs [[:category/by-id "WOM"] [:category/by-id "FOO"]]
          :category/children [[:category/by-id "HEE"] [:category/by-id "PUM"]
-                             [:category/by-id "BLO"] [:category/by-id "PLA"]]}
+                             [:category/by-id "BLO"] [:category/by-id "PLA"]]
+         :category/products [[:product/by-id "BAR"]
+                             [:product/by-id "STE"]
+                             [:product/by-id "TIL"]
+                             [:product/by-id "CAS"]
+                             [:product/by-id "FIO"]]}
   "HEE" {:category/id "HEE"
          :category/name "Heels"
-         :category/parent [[:category/by-id "FOO"]]
-         :category/children []}
+         :category/parent [:category/by-id "FOO"]
+         :category/bread-crumbs [[:category/by-id "WOM"]
+                                 [:category/by-id "FOO"]
+                                 [:category/by-id "HEE"]]
+         :category/children []
+         :category/products []}
   "PUM" {:category/id "PUM"
          :category/name "Pumps"
-         :category/parent [[:category/by-id "FOO"]]
-         :category/children []}
+         :category/parent [:category/by-id "FOO"]
+         :category/bread-crumbs [[:category/by-id "WOM"]
+                                 [:category/by-id "FOO"]
+                                 [:category/by-id "PUM"]]
+         :category/children []
+         :category/products [[:product/by-id "STE"]]}
   "BLO" {:category/id "BLO"
          :category/name "Block heels"
-         :category/parent [[:category/by-id "FOO"]]
-         :category/children []}
+         :category/parent [:category/by-id "FOO"]
+         :category/bread-crumbs [[:category/by-id "WOM"]
+                                 [:category/by-id "FOO"]
+                                 [:category/by-id "BLO"]]
+         :category/children []
+         :category/products [[:product/by-id "BAR"] [:product/by-id "TIL"]]}
   "PLA" {:category/id "PLA"
-         :category/parent [[:category/by-id "FOO"]]
+         :category/parent [:category/by-id "FOO"]
          :category/name "Platforms"
-         :category/children []}}}
+         :category/bread-crumbs [[:category/by-id "WOM"]
+                                 [:category/by-id "FOO"]
+                                 [:category/by-id "PLA"]]
+         :category/children []
+         :category/products [[:product/by-id "CAS"] [:product/by-id "FIO"]]}}}

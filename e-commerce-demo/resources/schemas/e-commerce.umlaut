@@ -2,7 +2,7 @@ type Product {
   id: ID
   name: String
   category: Category
-  flatCategories: Category[0..n]
+  breadCrumbs: Category[0..n]
   image: String
 }
 
@@ -10,8 +10,8 @@ type Category {
   id: ID
   name: String
   parent: Category?
+  bredaCrumbs: Category[0..n]
   children: Category[0..n]
-  flatChildren: Category[0..n]
   products: Product[0..n]
 }
 

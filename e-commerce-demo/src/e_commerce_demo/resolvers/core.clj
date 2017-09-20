@@ -4,4 +4,4 @@
 
 (defn build-resolvers [db]
   {:resolver-products (products/resolver db)
-   :resolver-categories categories/resolver})
+   :resolver-categories (categories/resolver db)})

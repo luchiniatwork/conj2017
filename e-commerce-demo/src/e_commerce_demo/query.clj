@@ -8,11 +8,11 @@
            (->kebab-case-string (name k))))
 
 (defn ^:private query-selectors [selections]
-  (reduce-kv (fn [a k v]
+  (reduce-kv (fn [c k v]
                (let [payload (if (map? v)
                                {(real-key k) (query-selectors (:selections v))}
                                (real-key k))]
-                 (conj a payload)))
+                 (conj c payload)))
              []
              selections))
 
@@ -20,5 +20,6 @@
   (let [tree (executor/selections-tree context)]
     (query-selectors tree)))
 
-(defn query [db q]
-  (om/db->tree q db db))
+(defn query
+  ([db q]
+   (om/db->tree q db db)))

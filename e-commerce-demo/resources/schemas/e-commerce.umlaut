@@ -1,28 +1,52 @@
+@doc "A product for our e-commerce demo."
 type Product {
-  id: ID
-  name: String
-  category: Category
-  breadCrumbs: Category[0..n]
-  image: String
+  id: ID {
+    @doc "The ID of the product."
+  }
+  name: String {
+    @doc "The name of the product."
+  }
+  category: Category {
+    @doc "The category this product belongs to."
+  }
+  breadCrumbs: Category[0..n] {
+    @doc "An array with all the hierarchy of parent categories from the top most to this product's one."
+  }
+  image: String {
+    @doc "The image URL of this product."
+  }
 }
 
+@doc "Products belong to hierarchical categories."
 type Category {
-  id: ID
-  name: String
-  parent: Category?
-  bredaCrumbs: Category[0..n]
-  children: Category[0..n]
-  products: Product[0..n]
+  id: ID {
+    @doc "The ID of the category."
+  }
+  name: String {
+    @doc "The name of the category."
+  }
+  parent: Category? {
+    @doc "The parent category of this category. Can be null."
+  }
+  breadCrumbs: Category[0..n] {
+    @doc "An array with all the hierarchy of parent categories from the top most to the current one."
+  }
+  children: Category[0..n] {
+    @doc "All the children categories of this category."
+  }
+  products: Product[0..n] {
+    @doc "All the products within this category - or its children categories."
+  }
 }
 
 @lang/lacinia identifier query
 type QueryRoot {
-  products: Product[0..n] {
-    @doc "Returns products"
+  products(byId: ID?): Product[0..n] {
+    @doc "Returns all products. Can be filtered by ID."
     @lang/lacinia resolver resolver-products
   }
-  categories: Category[0..n] {
-    @doc "Returns categories"
+  categories(byId: ID?): Category[0..n] {
+    @doc "Returns all categories. Can be filtered by ID."
     @lang/lacinia resolver resolver-categories
   }
 }

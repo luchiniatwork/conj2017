@@ -14,39 +14,44 @@
   [:category/by-id "PLA"]]
  
  :product/by-id
- {"BAR" {:product/id "BAR"
+ {"BAR" {:db/id "BAR"
          :product/name "Barineau"
          :product/category [:category/by-id "BLO"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
-                                [:category/by-id "BLO"]]}
-  "STE" {:product/id "STE"
+                                [:category/by-id "BLO"]]
+         :product/image "/images/barineau_pink-purple_54_main_sq_gy_3200x3200.jpg"}
+  "STE" {:db/id "STE"
          :product/name "Stessy"
          :product/category [:category/by-id "PUM"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
-                                [:category/by-id "PUM"]]}
-  "TIL" {:product/id "TIL"
+                                [:category/by-id "PUM"]]
+         :product/image "/images/stessy_pink-purple_55_main_sq_gy_3200x3200.jpg"}
+  "TIL" {:db/id "TIL"
          :product/name "Tilley"
          :product/category [:category/by-id "BLO"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
-                                [:category/by-id "BLO"]]}
-  "CAS" {:product/id "CAS"
+                                [:category/by-id "BLO"]]
+         :product/image "/images/tilley_red_40_main_sq_gy_3200x3200.jpg"}
+  "CAS" {:db/id "CAS"
          :product/name "Cassedy"
          :product/category [:category/by-id "PLA"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
-                                [:category/by-id "PLA"]]}
-  "FIO" {:product/id "FIO"
+                                [:category/by-id "PLA"]]
+         :product/image "/images/cassedy_pink-purple_51_main_sq_gy_3200x3200.jpg"}
+  "FIO" {:db/id "FIO"
          :product/name "Fiolla"
          :product/category [:category/by-id "PLA"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
-                                [:category/by-id "PLA"]]}}
+                                [:category/by-id "PLA"]]
+         :product/image "/images/fiolla_black_93_main_sq_gy_3200x3200.jpg"}}
 
  :category/by-id
- {"WOM" {:category/id "WOM"
+ {"WOM" {:db/id "WOM"
          :category/name "Women"
          :category/parent nil
          :category/bread-crumbs []
@@ -56,7 +61,7 @@
                              [:product/by-id "TIL"]
                              [:product/by-id "CAS"]
                              [:product/by-id "FIO"]]}
-  "FOO" {:category/id "FOO"
+  "FOO" {:db/id "FOO"
          :category/name "Footwear"
          :category/parent [:category/by-id "WOM"]
          :category/bread-crumbs [[:category/by-id "WOM"] [:category/by-id "FOO"]]
@@ -67,7 +72,7 @@
                              [:product/by-id "TIL"]
                              [:product/by-id "CAS"]
                              [:product/by-id "FIO"]]}
-  "HEE" {:category/id "HEE"
+  "HEE" {:db/id "HEE"
          :category/name "Heels"
          :category/parent [:category/by-id "FOO"]
          :category/bread-crumbs [[:category/by-id "WOM"]
@@ -75,7 +80,7 @@
                                  [:category/by-id "HEE"]]
          :category/children []
          :category/products []}
-  "PUM" {:category/id "PUM"
+  "PUM" {:db/id "PUM"
          :category/name "Pumps"
          :category/parent [:category/by-id "FOO"]
          :category/bread-crumbs [[:category/by-id "WOM"]
@@ -83,7 +88,7 @@
                                  [:category/by-id "PUM"]]
          :category/children []
          :category/products [[:product/by-id "STE"]]}
-  "BLO" {:category/id "BLO"
+  "BLO" {:db/id "BLO"
          :category/name "Block heels"
          :category/parent [:category/by-id "FOO"]
          :category/bread-crumbs [[:category/by-id "WOM"]
@@ -91,7 +96,7 @@
                                  [:category/by-id "BLO"]]
          :category/children []
          :category/products [[:product/by-id "BAR"] [:product/by-id "TIL"]]}
-  "PLA" {:category/id "PLA"
+  "PLA" {:db/id "PLA"
          :category/parent [:category/by-id "FOO"]
          :category/name "Platforms"
          :category/bread-crumbs [[:category/by-id "WOM"]

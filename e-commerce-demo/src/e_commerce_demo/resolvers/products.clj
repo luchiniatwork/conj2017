@@ -6,6 +6,6 @@
 (defn resolver [db]
   (fn [context arguments value]
     (let [q `[{:products/products ~(query/selectors context)}]
-          pred (if (nil? arguments) identity #(= (:product/id %) (:byId arguments)))
+          pred (if (nil? arguments) identity #(= (:db/id %) (:byId arguments)))
           {:keys [products/products]} (query/query db q)]
       (transform-keys ->camelCaseKeyword (filter pred products)))))

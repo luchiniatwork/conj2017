@@ -14,6 +14,7 @@
       (println "Pedestal: will bind to port" http-port)
       (assoc (or base-service-map {})
              :env env
+             ::http/resource-path "public"
              ::http/port http-port
              ::http/allowed-origins {:creds true :allowed-origins (constantly true)}))))
 

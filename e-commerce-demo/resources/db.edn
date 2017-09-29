@@ -20,35 +20,50 @@
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
                                 [:category/by-id "BLO"]]
-         :product/image "/images/barineau_pink-purple_54_main_sq_gy_3200x3200.jpg"}
+         :product/image "/images/barineau_pink-purple_54_main_sq_gy_3200x3200.jpg"
+         :product/image-obj {:image/url "/images/barineau_pink-purple_54_main_sq_gy_"
+                             :image/width 3200
+                             :image/height 3200}} 
   "STE" {:db/id "STE"
          :product/name "Stessy"
          :product/category [:category/by-id "PUM"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
                                 [:category/by-id "PUM"]]
-         :product/image "/images/stessy_pink-purple_55_main_sq_gy_3200x3200.jpg"}
+         :product/image "/images/stessy_pink-purple_55_main_sq_gy_3200x3200.jpg"
+         :product/image-obj {:image/url "/images/stessy_pink-purple_55_main_sq_gy_"
+                             :image/width 3200
+                             :image/height 3200}}
   "TIL" {:db/id "TIL"
          :product/name "Tilley"
          :product/category [:category/by-id "BLO"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
                                 [:category/by-id "BLO"]]
-         :product/image "/images/tilley_red_40_main_sq_gy_3200x3200.jpg"}
+         :product/image "/images/tilley_red_40_main_sq_gy_3200x3200.jpg"
+         :product/image-obj {:image/url "/images/tilley_red_40_main_sq_gy_"
+                             :image/width 3200
+                             :image/height 3200}}
   "CAS" {:db/id "CAS"
          :product/name "Cassedy"
          :product/category [:category/by-id "PLA"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
                                 [:category/by-id "PLA"]]
-         :product/image "/images/cassedy_pink-purple_51_main_sq_gy_3200x3200.jpg"}
+         :product/image "/images/cassedy_pink-purple_51_main_sq_gy_3200x3200.jpg"
+         :product/image-obj {:image/url "/images/cassedy_pink-purple_51_main_sq_gy_"
+                             :image/width 3200
+                             :image/height 3200}}
   "FIO" {:db/id "FIO"
          :product/name "Fiolla"
          :product/category [:category/by-id "PLA"]
          :product/bread-crumbs [[:category/by-id "WOM"]
                                 [:category/by-id "FOO"]
                                 [:category/by-id "PLA"]]
-         :product/image "/images/fiolla_black_93_main_sq_gy_3200x3200.jpg"}}
+         :product/image "/images/fiolla_black_93_main_sq_gy_3200x3200.jpg"
+         :product/image-obj {:image/url "/images/fiolla_black_93_main_sq_gy_"
+                             :image/width 3200
+                             :image/height 3200}}}
 
  :category/by-id
  {"WOM" {:db/id "WOM"

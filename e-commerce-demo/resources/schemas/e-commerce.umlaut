@@ -1,3 +1,10 @@
+@doc "A responsive image"
+type Image {
+  url: String
+  width: Integer
+  height: Integer
+}
+
 @doc "A product for our e-commerce demo."
 type Product {
   id: ID {
@@ -14,6 +21,11 @@ type Product {
   }
   image: String {
     @doc "The image URL of this product."
+    @deprecation "Use imageObj instead. This field is deprecated."
+  }
+  imageObj(width: Integer?, height: Integer?): Image {
+    @doc "The responsive image of the product"
+    @lang/lacinia resolver resolver-image
   }
 }
 

@@ -1,9 +1,9 @@
 (ns e-commerce-demo.components.schema
-    (:require [clojure.java.io :as io]
-              [com.stuartsierra.component :as component]
-              [com.walmartlabs.lacinia.schema :as schema]
-              [com.walmartlabs.lacinia.util :refer [attach-resolvers]]
-              [umlaut.generators.lacinia :as umlaut]))
+  (:require [clojure.java.io :as io]
+            [com.stuartsierra.component :as component]
+            [com.walmartlabs.lacinia.schema :as schema]
+            [com.walmartlabs.lacinia.util :refer [attach-resolvers]]
+            [umlaut.generators.lacinia :as umlaut]))
 
 (defrecord Schema [umlaut-file resolvers compiled-schema]
   component/Lifecycle

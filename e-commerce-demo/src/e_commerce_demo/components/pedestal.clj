@@ -1,6 +1,6 @@
 (ns e-commerce-demo.components.pedestal
-    (:require [com.stuartsierra.component :as component]
-              [io.pedestal.http :as http]))
+  (:require [com.stuartsierra.component :as component]
+            [io.pedestal.http :as http]))
 
 (defn ^:private test?
   [service-map]

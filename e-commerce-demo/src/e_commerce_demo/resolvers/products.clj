@@ -7,5 +7,5 @@
   (fn [context arguments value]
     (let [q `[{:products/products ~(query/selectors context)}]
           pred (if (nil? arguments) identity #(= (:db/id %) (:byId arguments)))
-          {:keys [products/products]} (query/query db q)]
-      (transform-keys ->camelCaseKeyword (filter pred products)))))
+          {:keys [products/products]} (query/query db q {:products/products pred})]
+      (transform-keys ->camelCaseKeyword products))))

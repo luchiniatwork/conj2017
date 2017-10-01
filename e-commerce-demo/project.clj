@@ -4,6 +4,7 @@
   
   :dependencies [[camel-snake-kebab "0.4.0"]
                  [clojure-future-spec "1.9.0-alpha17"]
+                 [com.netflix.hystrix/hystrix-clj "1.5.12"]
                  [com.stuartsierra/component "0.3.2"]
                  [com.walmartlabs/lacinia "0.20.0"]
                  [com.walmartlabs/lacinia-pedestal "0.3.0"]
@@ -12,6 +13,7 @@
                  [io.pedestal/pedestal.log "0.5.2"]
                  [io.pedestal/pedestal.route "0.5.2"]
                  [io.pedestal/pedestal.service "0.5.2"]
+                 [luchiniatwork/hystrix-event-stream-clj "0.3.0"]
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
                  [org.clojure/tools.namespace "0.2.11"]

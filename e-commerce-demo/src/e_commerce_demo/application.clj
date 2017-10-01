@@ -24,8 +24,8 @@
    :delayer-prods (component/using (delayer/new-delayer)
                                    {:config :delayer-prods-config})
 
-   :delayer-cats-config {:median 200
-                         :std-dev 100}
+   :delayer-cats-config {:median 2000
+                         :std-dev 2000}
    
    :delayer-cats (component/using (delayer/new-delayer)
                                   {:config :delayer-cats-config})

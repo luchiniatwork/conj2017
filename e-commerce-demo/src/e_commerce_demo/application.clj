@@ -7,6 +7,7 @@
             [e-commerce-demo.components.resolvers :as resolvers]
             [e-commerce-demo.components.routes :as routes]
             [e-commerce-demo.components.schema :as schema]
+            [e-commerce-demo.components.delayer :as delayer]
             [e-commerce-demo.config :as config]))
 
 (defn app-system [app-config]
@@ -16,14 +17,26 @@
    :umlaut-file "schemas/e-commerce.umlaut"
 
    :db (db/new-database)
+
+   :delayer-prods-config {:median 200
+                          :std-dev 100}
+   
+   :delayer-prods (component/using (delayer/new-delayer)
+                                   {:config :delayer-prods-config})
+
+   :delayer-cats-config {:median 200
+                         :std-dev 100}
+   
+   :delayer-cats (component/using (delayer/new-delayer)
+                                  {:config :delayer-cats-config})
    
    ;; Routes to be added to the basic GraphQL routes
    :routes routes/routes
 
    ;; Map of GraphQL resolvers to be added to the schema
    :resolvers (component/using (resolvers/new-resolvers)
-                               [:db])
-   
+                               [:db :delayer-prods :delayer-cats])
+
    ;; GraphQL schema and Lacinia itself
    :schema (component/using (schema/new-schema)
                             [:resolvers :umlaut-file])

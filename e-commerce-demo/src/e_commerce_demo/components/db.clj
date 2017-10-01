@@ -7,10 +7,11 @@
   component/Lifecycle
   (start [this]
     (println "Database: starting...")
-    (assoc this :db (-> "db.edn"
-                        io/resource
-                        slurp
-                        edn/read-string)))
+    (assoc this
+           :db (-> "db.edn"
+                   io/resource
+                   slurp
+                   edn/read-string)))
   (stop [this]
     (println "Database: stopping...")
     (assoc this :db nil)))

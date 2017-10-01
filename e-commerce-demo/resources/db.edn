@@ -8,7 +8,6 @@
  :categories/categories
  [[:category/by-id "WOM"]
   [:category/by-id "FOO"]
-  [:category/by-id "HEE"]
   [:category/by-id "PUM"]
   [:category/by-id "BLO"]
   [:category/by-id "PLA"]]
@@ -23,7 +22,7 @@
          :product/image "/images/barineau_pink-purple_54_main_sq_gy_3200x3200.jpg"
          :product/image-obj {:image/url "/images/barineau_pink-purple_54_main_sq_gy_"
                              :image/width 3200
-                             :image/height 3200}} 
+                             :image/height 3200}}
   "STE" {:db/id "STE"
          :product/name "Stessy"
          :product/category [:category/by-id "PUM"]
@@ -80,21 +79,14 @@
          :category/name "Footwear"
          :category/parent [:category/by-id "WOM"]
          :category/bread-crumbs [[:category/by-id "WOM"] [:category/by-id "FOO"]]
-         :category/children [[:category/by-id "HEE"] [:category/by-id "PUM"]
-                             [:category/by-id "BLO"] [:category/by-id "PLA"]]
+         :category/children [[:category/by-id "PUM"]
+                             [:category/by-id "BLO"]
+                             [:category/by-id "PLA"]]
          :category/products [[:product/by-id "BAR"]
                              [:product/by-id "STE"]
                              [:product/by-id "TIL"]
                              [:product/by-id "CAS"]
                              [:product/by-id "FIO"]]}
-  "HEE" {:db/id "HEE"
-         :category/name "Heels"
-         :category/parent [:category/by-id "FOO"]
-         :category/bread-crumbs [[:category/by-id "WOM"]
-                                 [:category/by-id "FOO"]
-                                 [:category/by-id "HEE"]]
-         :category/children []
-         :category/products []}
   "PUM" {:db/id "PUM"
          :category/name "Pumps"
          :category/parent [:category/by-id "FOO"]

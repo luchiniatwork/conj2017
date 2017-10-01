@@ -3,7 +3,7 @@
             [e-commerce-demo.resolvers.image :as image]
             [e-commerce-demo.resolvers.products :as products]))
 
-(defn build-resolvers [db]
-  {:resolver-products (products/resolver db)
-   :resolver-categories (categories/resolver db)
+(defn build-resolvers [{:keys [db delayer-prods delayer-cats]}]
+  {:resolver-products (products/resolver (:db db) (:delayer delayer-prods))
+   :resolver-categories (categories/resolver (:db db) (:delayer delayer-cats))
    :resolver-image image/resolver})

@@ -23,9 +23,11 @@
     (query-selectors tree)))
 
 (defn query
-  ([db q]
+  ([db q delayer] 
+   (Thread/sleep (max 0 (delayer)))
    (om/db->tree q db db))
-  ([db q preds]
+  ([db q preds delayer]
+   (Thread/sleep (max 0 (delayer)))
    (reduce-kv (fn [m k v]
                 (let [pred (or (get preds k) identity)]
                   (assoc m k (filter pred v))))

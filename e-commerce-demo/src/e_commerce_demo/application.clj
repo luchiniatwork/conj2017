@@ -18,7 +18,7 @@
 
    :db (db/new-database)
 
-   :delayer-prods-config {:median 200
+   :delayer-prods-config {:median 100
                           :std-dev 100}
    
    :delayer-prods (component/using (delayer/new-delayer)

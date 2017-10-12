@@ -5,8 +5,10 @@ for the Clojure/conj 2017.
 
 ## Table of Contents
 
-* [Getting Started](#getting-started)
-* [More Details](#more-details)
+* [Organization](#organization)
+* [Running The Demo Project](#running-the-demo-project)
+* [Simulating Latency](#simulating-latency)
+* [Load Testing](#load-testing)
 
 ## Organization
 

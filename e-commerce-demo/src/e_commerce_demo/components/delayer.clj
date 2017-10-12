@@ -3,9 +3,9 @@
   (:import [java.util Random]))
 
 (defn ^:private delayer-factory
-  [median std-dev]
+  [mean std-dev]
   (let [rng (Random.)]
-    #(+ median
+    #(+ mean
         (* std-dev
            (.nextGaussian rng)))))
 
@@ -13,9 +13,9 @@
   component/Lifecycle
   (start [this]
     (println "Delayer: starting...")
-    (let [{:keys [median std-dev]} config]
+    (let [{:keys [mean std-dev]} config]
       (assoc this
-             :delayer (delayer-factory median std-dev))))
+             :delayer (delayer-factory mean std-dev))))
   (stop [this]
     (println "Delayer: stopping...")
     (assoc this :delayer nil)))

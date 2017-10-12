@@ -18,14 +18,14 @@
 
    :db (db/new-database)
 
-   :delayer-prods-config {:median 100
+   :delayer-prods-config {:mean 100
                           :std-dev 100}
    
    :delayer-prods (component/using (delayer/new-delayer)
                                    {:config :delayer-prods-config})
 
-   :delayer-cats-config {:median 2000
-                         :std-dev 2000}
+   :delayer-cats-config {:mean 100
+                         :std-dev 100}
    
    :delayer-cats (component/using (delayer/new-delayer)
                                   {:config :delayer-cats-config})

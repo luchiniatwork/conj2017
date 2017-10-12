@@ -1,13 +1,11 @@
 # e-commerce-demo
 
-FIXME: GraphQL server for e-commerce-demo
+GraphQL server for e-commerce-demo.
 
 ## Table of Contents
 
 * [Getting Started](#getting-started)
 * [More Details](#more-details)
-* [Bugs](#bugs)
-* [Help!](#help)
 
 ## Getting Started
 
@@ -32,13 +30,11 @@ You should see the server initializing and ready:
 
 Open another terminal and fire a simple query against the server:
 
-    $ curl localhost:8888/graphql -X POST -H "content-type: application/graphql" -d '{ hello }'
+    $ curl localhost:3000/graphql -X POST -H "content-type: application/graphql" -d '{ products { name } }'
 
-You should see:
+You should see a JSON response with all the products in the demo DB.
 
-    {"data":{"hello":"... world!!!!"}}
-
-Point your browser to [http://localhost:3000](http://localhost:3000) and you will see graphiQL's interface.
+Point your browser to [http://localhost:3000/graphiql](http://localhost:3000/graphiql) and you will see graphiQL's interface.
 
 ## More Details
 
@@ -56,32 +52,23 @@ development.
 
 ### App Settings
 
-The default port is 3000 but this can be changed in `e-commerce-demo.config`.
+The default port is `3000` but this can be changed in `e-commerce-demo.config`.
 
 ### Modelling
 
-A sample schema is defined in `resources/schemas/hello.umlaut`. It is defined using
-[Umlaut](http://github.com/workco/umlaut).
+The schema is defined in `resources/schemas/e-commerce.umlaut`.
+It is defined using [Umlaut](http://github.com/workco/umlaut).
 
 ### Resolvers
 
-The sample only has one resolver which is defined in `e-commerce-demo.resolvers.hello`. Resolvers
-are aggregated via `e-commerce-demo.resolvers.core`.
+Resolvers are aggregated via `e-commerce-demo.resolvers.core`.
 
-### Extra Routes
+### Want to bootstrap a similar project?
 
-Besides GraphQL's `/graphql` this sample also shows how to add extra routes on `e-commerce-demo.components.routes`.
-
-## Bugs
-
-FIXME
-
-## Help
-
-FIXME
+This project was created using the [Justworks](https://github.com/workco/justworks) lein template.
 
 ## License
 
-Copyright © 2017 FIXME
+Copyright © 2017 Tiago Luchini
 
-Distributed under the FIXME.
+Distributed under the MIT License.

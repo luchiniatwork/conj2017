@@ -6,7 +6,7 @@ for the Clojure/conj 2017.
 ## Table of Contents
 
 * [Organization](#organization)
-* [Presentation(#presentation)
+* [Presentation](#presentation)
 * [Running The Demo Project](#running-the-demo-project)
 * [Simulating Latency](#simulating-latency)
 * [Load Testing](#load-testing)

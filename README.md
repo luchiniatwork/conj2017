@@ -6,6 +6,7 @@ for the Clojure/conj 2017.
 ## Table of Contents
 
 * [Organization](#organization)
+* [Presentation Decl](#presentation-deck)
 * [Running The Demo Project](#running-the-demo-project)
 * [Simulating Latency](#simulating-latency)
 * [Load Testing](#load-testing)
@@ -14,6 +15,10 @@ for the Clojure/conj 2017.
 
 * [e-commerce-demo](/e-commerce-demo) - contains the demo project that was used for this presentation
 * [statistics](/statistics) - contains the scripts for running the load tests as well as a dump of the test results used on the talk
+
+## Presentation Deck
+
+<script async class="speakerdeck-embed" data-id="f4857f609a0e44a789b248a537167ff2" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
 ## Running The Demo Project
 

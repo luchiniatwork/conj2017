@@ -18,8 +18,11 @@ for the Clojure/conj 2017.
 
 ## Presentation
 
-* [Deck](https://speakerdeck.com/luchiniatwork/the-power-of-lacinia-and-hsytrix-in-production)
-* Video
+Here's the recorded [video](https://www.youtube.com/watch?v=uL9QavmAInw) from Clojure/conj 2017:
+
+[![Video](/images/video.png)](https://www.youtube.com/watch?v=uL9QavmAInw)
+
+The [deck](https://speakerdeck.com/luchiniatwork/the-power-of-lacinia-and-shsytrix-in-production) can be found [here](https://speakerdeck.com/luchiniatwork/the-power-of-lacinia-and-shsytrix-in-production).
 
 ## Running The Demo Project
 
